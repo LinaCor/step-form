@@ -1,0 +1,175 @@
+@font-face {
+  font-family: 'Ubuntu-Regular';
+  src: url('../src/fonts/Ubuntu-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu-Bold';
+  src: url('../src/fonts/Ubuntu-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-style: 100%;
+  line-height: 1;
+  font-style: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-style: inherit;
+  font-weight: 400;
+}
+
+:root {
+  --marine-blue: hsl(213, 96%, 18%);
+  --purplish-blue: hsl(243, 100%, 62%);
+  --pastel-blue: hsl(228, 100%, 84%);
+  --light-blue: hsl(206, 94%, 87%);
+  --straw: hsl(354, 84%, 57%);
+  --cool-gray: hsl(231, 11%, 63%);
+  --light-gray: hsl(229, 24%, 87%);
+  --magnolia: hsl(217, 100%, 97%);
+  --alabaster: hsl(231, 100%, 99%);
+  --white: hsl(0, 0%, 100%);
+}
+
+
+body {
+  font-family: 'Ubuntu-Regular', sans-serif;
+  font-weight: normal;
+  background-color: var(--light-gray);
+}
+
+.grey {
+  color: var(--light-gray);
+}
+
+.fz-12 {
+  font-size: 12px;
+}
+
+.bold {
+  font-family: 'Ubuntu-Bold', sans-serif;
+}
+
+.form-step {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 30px;
+  background: url('../src/img/bg-sidebar-desktop.svg') 50%/cover no-repeat;
+}
+
+.form-step__list {
+  list-style-type: none;
+  color: var(--white);
+}
+
+.step-list__item {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.item-sircle {
+  width: 35px;
+  height: 35px;
+  margin-right: 15px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 32px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+}
+
+.current-sircle {
+  color: var(--marine-blue);
+  background-color: var(--light-blue);
+}
+
+.item-desc {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  justify-content: space-between;
+}
