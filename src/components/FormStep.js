@@ -10,7 +10,7 @@ export function FormStep() {
     <div className="form-step">
       <ul className="form-step__list">
         {steps.map(el => (
-          <li className="step-list__item" key={el.step}>
+          <li className="step-list__item" key={el.id}>
             <div className={`item-sircle ${currentForm === el.step ? 'current-sircle' : ''}`}>{el.step}</div>
             <div className="item-desc">
               <p className="grey fz-12">{el.name}</p>
