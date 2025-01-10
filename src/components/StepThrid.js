@@ -1,8 +1,17 @@
-import { pickOds } from "../data"
-
+import { pickOds } from "../data";
+import { useNavigate } from "react-router-dom";
 
 
 export function StepThrid() {
+  const navigate = useNavigate();
+
+  const goToNextPage = () => {
+    navigate('/step-4');
+  };
+
+  const goBack = () => {
+    navigate(-1);
+  };
   return (
     <>
       <h2 className="marine bold">Pick add-ons</h2>
@@ -20,8 +29,8 @@ export function StepThrid() {
         ))}
       </form>
       <div className="btn-container">
-        <button className="back-btn">Go back</button>
-        <button className="go-btn">Next Step</button>
+        <button className="back-btn" onClick={goBack}>Go back</button>
+        <button className="go-btn" onClick={goToNextPage}>Next Step</button>
       </div>
     </>
   )

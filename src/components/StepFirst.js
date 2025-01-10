@@ -1,4 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 export function StepFirst() {
+  const navigate = useNavigate();
+
+  const goToNextPage = () => {
+    navigate('/step-2');
+  };
+
   return (
     <>
       <h2 className="marine bold">Personal info</h2>
@@ -18,7 +26,7 @@ export function StepFirst() {
         </label>
       </form>
       <div className="btn-container">
-        <button className="go-btn end-btn">Next Step</button>
+        <button className="go-btn end-btn" onClick={goToNextPage}>Next Step</button>
       </div>
     </>
   )

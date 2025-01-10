@@ -1,8 +1,17 @@
 //TODO получить из LS обьект с заполненными данными по форме
-
+import { useNavigate } from "react-router-dom";
 
 
 export function StepFour() {
+  const navigate = useNavigate();
+
+  const goToNextPage = () => {
+    navigate('/thanks-you');
+  };
+
+  const goBack = () => {
+    navigate(-1);
+  };
   return (
     <>
       <h2>Finishing up</h2>
@@ -30,8 +39,8 @@ export function StepFour() {
         </div>
       </div>
       <div className="btn-container">
-        <button className="back-btn">Go back</button>
-        <button className="go-btn">Confirm</button>
+        <button className="back-btn" onClick={goBack}>Go back</button>
+        <button className="go-btn" onClick={goToNextPage}>Confirm</button>
       </div>
     </>
   )

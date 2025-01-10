@@ -1,8 +1,18 @@
-import { tarifPlan } from "../data"
-
+import { tarifPlan } from "../data";
+import { useNavigate } from "react-router-dom";
 
 
 export function StepSecond() {
+  const navigate = useNavigate();
+
+  const goToNextPage = () => {
+    navigate('/step-3');
+  };
+
+  const goBack = () => {
+    navigate(-1);
+  };
+
   return (
     <>
       <h2 className="marine bold">Select your plan</h2>
@@ -26,8 +36,8 @@ export function StepSecond() {
         <p>Yearly</p>
       </div>
       <div className="btn-container">
-        <button className="back-btn">Go back</button>
-        <button className="go-btn">Next Step</button>
+        <button className="back-btn" onClick={goBack}>Go back</button>
+        <button className="go-btn" onClick={goToNextPage}>Next Step</button>
       </div>
     </>
   )

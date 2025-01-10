@@ -416,3 +416,27 @@ input[type="checkbox"].toggle:focus {
 .desk-total .total-price {
   color: var(--purplish-blue);
 }
+
+/*Thanks you*/
+
+.thanks {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: auto 0;
+}
+
+.thanks .thanks-img {
+  width: 100px;
+  margin-bottom: 30px;
+}
+
+.thanks h2 {
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.thanks p {
+  line-height: 24px;
+}
