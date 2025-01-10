@@ -5,16 +5,17 @@ import { tarifPlan } from "../data"
 export function StepSecond() {
   return (
     <>
-      <h2>Select your plan</h2>
+      <h2 className="marine bold">Select your plan</h2>
       <p>You have the option of monthly or yearly billing</p>
       <form className="form-radio">
         {tarifPlan.map(el => (
           <label key={el.id}>
             <input type="radio" name="plan" value={el.value} className="radio-input visabily-hidden" />
             <div className="radio-card">
-              <img src={el.imgSrc} alt="arcade type"></img>
+              <img src={el.imgSrc} alt="icon type"></img>
               <p>{el.name}</p>
-              <p className="grey">{el.cost}</p>
+              <p className="grey">{el.costMo}</p>
+              {/*<p>2 mounths free</p>*/}
             </div>
           </label>
         ))}
