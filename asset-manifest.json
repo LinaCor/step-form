@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.306c83cd.css",
-    "main.js": "/static/js/main.6d53071b.js",
-    "static/media/Ubuntu-Regular.ttf": "/static/media/Ubuntu-Regular.1cbb1b79a23478cc89ad.ttf",
-    "static/media/Ubuntu-Bold.ttf": "/static/media/Ubuntu-Bold.fec2d0f1431a6114a6ce.ttf",
-    "static/media/bg-sidebar-desktop.svg": "/static/media/bg-sidebar-desktop.6918153f38678372ceb1.svg",
-    "static/media/icon-advanced.svg": "/static/media/icon-advanced.705bd10c4c1f688871d729633f0ca4ae.svg",
-    "static/media/icon-thank-you.svg": "/static/media/icon-thank-you.ee753f231cc5a5789b8eb922a96472c0.svg",
-    "static/media/icon-pro.svg": "/static/media/icon-pro.2e7e377da9c658d608624304a0f8dae6.svg",
-    "index.html": "/index.html",
-    "static/media/icon-arcade.svg": "/static/media/icon-arcade.a08c098289a31bb2f66d675be71565b3.svg",
-    "main.306c83cd.css.map": "/static/css/main.306c83cd.css.map",
-    "main.6d53071b.js.map": "/static/js/main.6d53071b.js.map"
+    "main.css": "/step-form/static/css/main.81c776a7.css",
+    "main.js": "/step-form/static/js/main.3bb1182f.js",
+    "static/media/Ubuntu-Regular.ttf": "/step-form/static/media/Ubuntu-Regular.1cbb1b79a23478cc89ad.ttf",
+    "static/media/Ubuntu-Bold.ttf": "/step-form/static/media/Ubuntu-Bold.fec2d0f1431a6114a6ce.ttf",
+    "static/media/bg-sidebar-desktop.svg": "/step-form/static/media/bg-sidebar-desktop.6918153f38678372ceb1.svg",
+    "static/media/icon-advanced.svg": "/step-form/static/media/icon-advanced.705bd10c4c1f688871d729633f0ca4ae.svg",
+    "static/media/icon-thank-you.svg": "/step-form/static/media/icon-thank-you.ee753f231cc5a5789b8eb922a96472c0.svg",
+    "static/media/icon-pro.svg": "/step-form/static/media/icon-pro.2e7e377da9c658d608624304a0f8dae6.svg",
+    "index.html": "/step-form/index.html",
+    "static/media/icon-arcade.svg": "/step-form/static/media/icon-arcade.a08c098289a31bb2f66d675be71565b3.svg",
+    "main.81c776a7.css.map": "/step-form/static/css/main.81c776a7.css.map",
+    "main.3bb1182f.js.map": "/step-form/static/js/main.3bb1182f.js.map"
   },
   "entrypoints": [
-    "static/css/main.306c83cd.css",
-    "static/js/main.6d53071b.js"
+    "static/css/main.81c776a7.css",
+    "static/js/main.3bb1182f.js"
   ]
 }
