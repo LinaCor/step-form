@@ -1,8 +1,10 @@
 //TODO получить из LS обьект с заполненными данными по форме
 import { useNavigate } from "react-router-dom";
-
+import { useDispatch } from "react-redux";
+import {  prevStep } from "../store/step/step-actions";
 
 export function StepFour() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const goToNextPage = () => {
@@ -11,6 +13,7 @@ export function StepFour() {
 
   const goBack = () => {
     navigate(-1);
+    dispatch(prevStep);
   };
   return (
     <>

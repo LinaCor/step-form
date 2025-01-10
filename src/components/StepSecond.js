@@ -1,16 +1,21 @@
 import { tarifPlan } from "../data";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { nextStep, prevStep } from "../store/step/step-actions";
 
 
 export function StepSecond() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const goToNextPage = () => {
     navigate('/step-3');
+    dispatch(nextStep);
   };
 
   const goBack = () => {
     navigate(-1);
+    dispatch(prevStep);
   };
 
   return (

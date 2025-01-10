@@ -1,10 +1,14 @@
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { nextStep } from "../store/step/step-actions";
 
 export function StepFirst() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const goToNextPage = () => {
     navigate('/step-2');
+    dispatch(nextStep);
   };
 
   return (
