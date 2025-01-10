@@ -101,16 +101,7 @@ h6 {
   font-weight: 400;
 }
 
-.visabily-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
+
 
 :root {
   --marine-blue: hsl(213, 96%, 18%);
@@ -148,9 +139,33 @@ body {
   font-size: 14px;
 }
 
-
 .bold {
   font-family: 'Ubuntu-Bold', sans-serif;
+}
+
+.check-required {
+  display: flex;
+  justify-content: space-between;
+}
+
+.red-alert {
+  color: red;
+  line-height: 24px;
+}
+
+.visabily-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.hidden {
+  opacity: 0;
 }
 
 /*step sidebar*/
@@ -296,6 +311,10 @@ body {
 
 .radio-card img {
   margin-bottom: 50px;
+}
+
+.radio-card p {
+  margin-bottom: 7px;
 }
 
 .radio-input:checked+.radio-card {

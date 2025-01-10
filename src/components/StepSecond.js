@@ -1,16 +1,23 @@
 import { tarifPlan } from "../data";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { nextStep, prevStep } from "../store/step/step-actions";
-
+import { selectPlanChecked, selectPeriodChecked, selectPlanRadio } from "../store/form/form-selector";
+import { selectPlan, selectPeriod } from "../store/form/form-actions";
 
 export function StepSecond() {
+  const isPlanCheck = useSelector(selectPlanChecked);
+  const isPeriodCheck = useSelector(selectPeriodChecked);
+  const valuePlan = useSelector(selectPlanRadio);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const goToNextPage = () => {
-    navigate('/step-3');
-    dispatch(nextStep);
+    if (isPlanCheck) {
+      navigate('/step-3');
+      dispatch(nextStep);
+    }
   };
 
   const goBack = () => {
@@ -25,19 +32,31 @@ export function StepSecond() {
       <form className="form-radio">
         {tarifPlan.map(el => (
           <label key={el.id}>
-            <input type="radio" name="plan" value={el.value} className="radio-input visabily-hidden" />
+            <input
+              type="radio"
+              name="plan"
+              value={el.value}
+              className="radio-input visabily-hidden"
+              checked={el.value === valuePlan}
+              onChange={(evt) => dispatch(selectPlan(evt.target.value))}
+            />
             <div className="radio-card">
               <img src={el.imgSrc} alt="icon type"></img>
               <p>{el.name}</p>
-              <p className="grey">{el.costMo}</p>
-              {/*<p>2 mounths free</p>*/}
+              <p className="grey">{isPeriodCheck ? el.costYr : el.costMo}</p>
+              {isPeriodCheck ? <p className="fs-12">2 mounths free</p> : ''}
             </div>
           </label>
         ))}
       </form>
       <div className="time-container">
         <p>Monthly</p>
-        <input type="checkbox" className="toggle" />
+        <input
+          type="checkbox"
+          className="toggle"
+          checked={isPeriodCheck}
+          onChange={() => dispatch(selectPeriod())}
+        />
         <p>Yearly</p>
       </div>
       <div className="btn-container">

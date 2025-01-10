@@ -1,10 +1,14 @@
 import { pickOds } from "../data";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { nextStep, prevStep } from "../store/step/step-actions";
-
+import { selectAddons } from "../store/form/form-actions";
+import { selectAddonsCheck } from "../store/form/form-selector";
 
 export function StepThrid() {
+  const checkAddons = useSelector(selectAddonsCheck);
+  console.log(checkAddons);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -24,7 +28,12 @@ export function StepThrid() {
       <form className="form-check">
         {pickOds.map(el => (
           <label key={el.id} className="main-card">
-            <input type="checkbox" className="check-input" />
+            <input
+              type="checkbox"
+              className="check-input"
+              //checked={el.title === checkAddons[el]}
+              onChange={() => dispatch(selectAddons(el.title))}
+            />
             <div className="check-card">
               <p className="title-card marine bold">{el.title}</p>
               <p className="grey">{el.desc}</p>
