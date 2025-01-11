@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { nextStep, prevStep } from "../store/step/step-actions";
 import { selectAddons } from "../store/form/form-actions";
-import { selectAddonsCheck } from "../store/form/form-selector";
+import { selectPeriodChecked, selectAddonsCheck } from "../store/form/form-selector";
 
 export function StepThrid() {
-  const checkAddons = useSelector(selectAddonsCheck);
-  console.log(checkAddons);
+  const checkPeriod = useSelector(selectPeriodChecked);
+  const selectedAddons = useSelector(selectAddonsCheck);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -31,14 +31,14 @@ export function StepThrid() {
             <input
               type="checkbox"
               className="check-input"
-              //checked={el.title === checkAddons[el]}
-              onChange={() => dispatch(selectAddons(el.title))}
+              checked={selectedAddons.some(item => item.id === el.id)}
+              onChange={() => dispatch(selectAddons(el.id, el.title, el.costMo, el.costYr))}
             />
             <div className="check-card">
               <p className="title-card marine bold">{el.title}</p>
               <p className="grey">{el.desc}</p>
             </div>
-            <p className="check-cost">{el.costMo}</p>
+            <p className="check-cost">{checkPeriod ? `$${el.costYr}/yr` : `+$${el.costMo}/mo`}</p>
           </label>
         ))}
       </form>

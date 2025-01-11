@@ -20,18 +20,28 @@ export const inputPhone = (valPhone) => ({
   valPhone
 });
 
-export const selectPlan = (valPlan) => ({
+export const selectPlan = (idPlan, valPlan, costM, costY) => ({
   type: SELECT_PLAN,
-  valPlan
+  plan: {
+    id: idPlan,
+    title: valPlan,
+    mnth: costM,
+    year: costY,
+  }
 });
 
 export const selectPeriod = () => ({
   type: SELECT_PERIOD,
 });
 
-export const selectAddons = (valAddon) => ({
+export const selectAddons = (idAddon, valAddon, costM, costY) => ({
   type: SELECT_ADDONS,
-  valAddon
+  addon: {
+    id: idAddon,
+    title: valAddon,
+    mnth: costM,
+    year: costY,
+  }
 });
 
 

@@ -37,13 +37,13 @@ export function StepSecond() {
               name="plan"
               value={el.value}
               className="radio-input visabily-hidden"
-              checked={el.value === valuePlan}
-              onChange={(evt) => dispatch(selectPlan(evt.target.value))}
+              checked={el.id === valuePlan.id}
+              onChange={() => dispatch(selectPlan(el.id, el.value, el.costMo, el.costYr))}
             />
             <div className="radio-card">
               <img src={el.imgSrc} alt="icon type"></img>
               <p>{el.name}</p>
-              <p className="grey">{isPeriodCheck ? el.costYr : el.costMo}</p>
+              <p className="grey">{isPeriodCheck ? `$${el.costYr}/yr` : `$${el.costMo}/mo`}</p>
               {isPeriodCheck ? <p className="fs-12">2 mounths free</p> : ''}
             </div>
           </label>

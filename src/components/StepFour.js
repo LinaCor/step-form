@@ -1,9 +1,14 @@
-//TODO получить из LS обьект с заполненными данными по форме
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import {  prevStep } from "../store/step/step-actions";
+import { useDispatch, useSelector } from "react-redux";
+import { prevStep } from "../store/step/step-actions";
+import { selectPlanRadio, selectAddonsCheck, selectPeriodChecked } from "../store/form/form-selector";
+
 
 export function StepFour() {
+  const currentPlan = useSelector(selectPlanRadio);
+  const currentPeriod = useSelector(selectPeriodChecked);
+  const currentAddons = useSelector(selectAddonsCheck);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -15,6 +20,18 @@ export function StepFour() {
     navigate(-1);
     dispatch(prevStep);
   };
+
+  const totalAddonsPrice = (period) => {
+    const addonPrice = currentAddons.reduce((total, item) => {
+      return total + (period ? item.year : item.mnth);
+    }, 0);
+    const planPrice = period ? currentPlan.year : currentPlan.mnth;
+    const totalPrice = addonPrice + planPrice;
+
+    return `${totalPrice}${period ? '/yr' : '/mo'}`;
+  };
+
+
   return (
     <>
       <h2>Finishing up</h2>
@@ -22,23 +39,22 @@ export function StepFour() {
       <div className="finish-desk">
         <div className="desk-body">
           <div className="bold marine">
-            <p>Arcade (Monthly)</p>
-            <p>$9/mo</p>
+            <p>{currentPlan.title} ({currentPeriod ? 'Yearly' : 'Monthly'})</p>
+            <p>{currentPeriod ? `$${currentPlan.year}` : `$${currentPlan.mnth}`}</p>
           </div>
           <ul>
-            <li className="fs-14">
-              <p className="grey">Online service</p>
-              <p className="marine">+$1/mo</p>
-            </li>
-            <li className="fs-14">
-              <p className="grey">Larger storage</p>
-              <p className="marine">+$2/mo</p>
-            </li>
+            {currentAddons.map(el => (
+              <li className="fs-14" key={el.id}>
+                <p className="grey">{el.title}</p>
+                <p className="marine">{currentPeriod ? `$${el.year}` : `$${el.mnth}`}</p>
+              </li>
+            )
+            )}
           </ul>
         </div>
         <div className="desk-total">
           <p className="grey">Total (per month/year)</p>
-          <p className="total-price bold">+$12/mo</p>
+          <p className="total-price bold">{`$${totalAddonsPrice(currentPeriod)}`}</p>
         </div>
       </div>
       <div className="btn-container">
@@ -47,4 +63,4 @@ export function StepFour() {
       </div>
     </>
   )
-}
+};

@@ -4,7 +4,7 @@ let initialState = {
   name: '',
   email: '',
   phone: '',
-  plan: '',
+  plan: { id: '72hw', title: 'Arcade', mnth: 9, year: 90 },
   period: false,
   addons: []
 };
@@ -17,14 +17,12 @@ export const formReducer = (state = initialState, action) => {
         name: action.valName
       }
     }
-
     case (INPUT_EMAIL): {
       return {
         ...state,
         email: action.valEmail
       }
     }
-
     case (INPUT_PHONE): {
       return {
         ...state,
@@ -34,7 +32,7 @@ export const formReducer = (state = initialState, action) => {
     case (SELECT_PLAN): {
       return {
         ...state,
-        plan: action.valPlan
+        plan: action.plan
       }
     }
     case (SELECT_PERIOD): {
@@ -42,17 +40,23 @@ export const formReducer = (state = initialState, action) => {
         ...state,
         period: !state.period
       }
-
     }
     case (SELECT_ADDONS): {
-      return {
-        ...state,
-        addons: [...state.addons, action.valAddon],
+      let isAddonExist = state.addons.some(el => el.id === action.addon.id);
+      if (!isAddonExist) {
+        return {
+          ...state,
+          addons: [...state.addons, action.addon]
+        }
+      } else {
+        return {
+          ...state,
+          addons: state.addons.filter(el => el.id !== action.addon.id)
+        }
       }
     }
-
     default: {
       return state;
     }
   }
-}
+};

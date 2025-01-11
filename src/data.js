@@ -10,15 +10,15 @@ export const steps = [
 ];
 
 export const tarifPlan = [
-  { id: '72hw', imgSrc: arcade, name: 'Arcade', costMo: '$9/mo', costYr: '$90/yr', value: 'arcade' },
-  { id: '93jq', imgSrc: advanced, name: 'Advanced', costMo: '$12/mo', costYr: '$120/yr', value: 'advanced' },
-  { id: '64ie', imgSrc: pro, name: 'Pro', costMo: '$15/mo', costYr: '$150/yr', value: 'pro' },
+  { id: '72hw', imgSrc: arcade, name: 'Arcade', costMo: 9, costYr: 90, value: 'Arcade' },
+  { id: '93jq', imgSrc: advanced, name: 'Advanced', costMo: 12, costYr: 120, value: 'Advanced' },
+  { id: '64ie', imgSrc: pro, name: 'Pro', costMo: 15, costYr: 150, value: 'Pro' },
 ];
 
 export const pickOds = [
-  { id: '63ha', title: 'Online service', desc: 'Access to multiplayer games', costMo: '+$1/mo', costYr: '$10/yr' },
-  { id: '82kq', title: 'Larger storage', desc: 'Extra 1TB of cloud save', costMo: '+$2/mo', costYr: '$20/yr' },
-  { id: '71ew', title: 'Customizable Profile', desc: 'Custom theme on your profile', costMo: '+$2/mo', costYr: '$20/yr' },
+  { id: '63ha', title: 'Online service', desc: 'Access to multiplayer games', costMo: 1, costYr: 10 },
+  { id: '82kq', title: 'Larger storage', desc: 'Extra 1TB of cloud save', costMo: 2, costYr: 20 },
+  { id: '71ew', title: 'Customizable Profile', desc: 'Custom theme on your profile', costMo: 2, costYr: 20 },
 ];
 
 
