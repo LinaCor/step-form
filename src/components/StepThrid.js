@@ -36,7 +36,7 @@ export function StepThrid() {
             />
             <div className="check-card">
               <p className="title-card marine bold">{el.title}</p>
-              <p className="grey">{el.desc}</p>
+              <p className="grey fs-12">{el.desc}</p>
             </div>
             <p className="check-cost">{checkPeriod ? `$${el.costYr}/yr` : `+$${el.costMo}/mo`}</p>
           </label>

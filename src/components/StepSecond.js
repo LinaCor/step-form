@@ -42,9 +42,11 @@ export function StepSecond() {
             />
             <div className="radio-card">
               <img src={el.imgSrc} alt="icon type"></img>
-              <p>{el.name}</p>
-              <p className="grey">{isPeriodCheck ? `$${el.costYr}/yr` : `$${el.costMo}/mo`}</p>
-              {isPeriodCheck ? <p className="fs-12">2 mounths free</p> : ''}
+              <div>
+                <p>{el.name}</p>
+                <p className="grey">{isPeriodCheck ? `$${el.costYr}/yr` : `$${el.costMo}/mo`}</p>
+                {isPeriodCheck ? <p className="fs-12">2 mounths free</p> : ''}
+              </div>
             </div>
           </label>
         ))}

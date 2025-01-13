@@ -2,6 +2,7 @@ import thanksIcon from '../img/icon-thank-you.svg';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { resetStep } from '../store/step/step-actions';
+import { resetForm } from '../store/form/form-actions';
 import { useDispatch } from 'react-redux';
 
 export function ThanksYou() {
@@ -12,7 +13,8 @@ export function ThanksYou() {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate('/');
-      dispatch(resetStep);
+      //dispatch(resetStep);
+      dispatch(resetForm);
     }, 5000)
 
     return () => clearTimeout(timer);

@@ -101,8 +101,6 @@ h6 {
   font-weight: 400;
 }
 
-
-
 :root {
   --marine-blue: hsl(213, 96%, 18%);
   --purplish-blue: hsl(243, 100%, 62%);
@@ -115,7 +113,6 @@ h6 {
   --alabaster: hsl(231, 100%, 99%);
   --white: hsl(0, 0%, 100%);
 }
-
 
 body {
   font-family: 'Ubuntu-Regular', sans-serif;
@@ -218,6 +215,7 @@ body {
   flex-direction: column;
   padding: 30px 50px;
   flex-grow: 1;
+  background-color: var(--alabaster);
 }
 
 .form-content>h2 {
@@ -283,7 +281,6 @@ body {
   border: 1px solid var(--light-gray);
   border-radius: 10px;
 }
-
 
 /*second step*/
 
@@ -383,7 +380,6 @@ input[type="checkbox"].toggle:focus {
   border: 1px solid var(--cool-gray);
   border-radius: 10px;
   cursor: pointer;
-  /*background-color: var(--magnolia);*/
 }
 
 .form-check .check-input {
@@ -458,4 +454,61 @@ input[type="checkbox"].toggle:focus {
 
 .thanks p {
   line-height: 24px;
+}
+
+/*responsive*/
+@media (max-width: 640px) {
+  .App {
+    align-items: flex-start;
+    margin-top: 50px;
+  }
+
+  .form-container {
+    flex-direction: column;
+  }
+
+  .form-step {
+    max-width: 100%;
+    min-height: 100px;
+    background: url('../src/img/bg-sidebar-mobile.svg') 50%/cover no-repeat;
+  }
+
+  .step-list__item .item-desc {
+    display: none;
+  }
+
+  .form-step__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-step__list .step-list__item {
+    margin-bottom: 0;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .form-radio {
+    flex-direction: column;
+  }
+
+  .form-radio>label {
+    width: 100%;
+  }
+
+  .form-radio .radio-card {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .radio-card img {
+    margin-bottom: 5px;
+  }
+
+  .time-container {
+    margin-bottom: 20px;
+  }
 }

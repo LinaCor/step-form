@@ -1,4 +1,4 @@
-import { INPUT_EMAIL, INPUT_NAME, INPUT_PHONE, SELECT_ADDONS, SELECT_PERIOD, SELECT_PLAN } from "./form-actions";
+import { INPUT_EMAIL, INPUT_NAME, INPUT_PHONE, SELECT_ADDONS, SELECT_PERIOD, SELECT_PLAN, RESET_FORM } from "./form-actions";
 
 let initialState = {
   name: '',
@@ -54,6 +54,9 @@ export const formReducer = (state = initialState, action) => {
           addons: state.addons.filter(el => el.id !== action.addon.id)
         }
       }
+    }
+    case (RESET_FORM): {
+      return initialState;
     }
     default: {
       return state;

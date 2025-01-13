@@ -4,6 +4,8 @@ export const INPUT_PHONE = 'INPUT_PHONE';
 export const SELECT_PLAN = 'SELECT_PLAN';
 export const SELECT_PERIOD = 'SELECT_PERIOD';
 export const SELECT_ADDONS = 'SELECT_ADDONS';
+export const RESET_FORM = 'RESET_FORM';
+
 
 export const inputName = (valName) => ({
   type: INPUT_NAME,
@@ -44,6 +46,10 @@ export const selectAddons = (idAddon, valAddon, costM, costY) => ({
   }
 });
 
+
+export const resetForm = {
+  type: RESET_FORM,
+};
 
 
 
