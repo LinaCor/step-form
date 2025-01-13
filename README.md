@@ -1,4 +1,5 @@
-![Static Badge](https://img.shields.io/badge/CSS-3-blue) ![Static Badge](https://img.shields.io/badge/JavaScript-ES6-yellow) ![Static Badge](https://img.shields.io/badge/React-18-blue)
+![Static Badge](https://img.shields.io/badge/CSS-3-blue) ![Static Badge](https://img.shields.io/badge/JavaScript-ES6-yellow) ![Static Badge](https://img.shields.io/badge/React-18-blue) ![Static Badge](https://img.shields.io/badge/Router-%5E7-%23fd3e4d
+) ![Static Badge](https://img.shields.io/badge/Redux-%5E9-light%20green)
 
 
 # О проекте
@@ -12,8 +13,8 @@
 # Функциональность
 Основные возможности, реализованные в проекте:
 - ввод различных данных, возврат к ним для возможности редактирования
+- валидация поля email
 - выбор программы оплаты за услуги (год или месяц), в зависимости от которого меняется цена в последующих шагах формы
 - просмотр выбранных опций
 - адаптивность под различные устройства
 
-в данный момент проект дорабатывается: будет добавлена валидация полей mail и phone.
