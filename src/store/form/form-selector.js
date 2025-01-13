@@ -1,5 +1,5 @@
-export const selectEmailAndPhone = (state) => (Boolean(state.form.email) && Boolean(state.form.phone));
-export const selectPlanChecked = (state) => (Boolean(state.form.plan));
+export const selectEmailInput = (state) => Boolean(state.form.email);
+export const selectPlanChecked = (state) => Boolean(state.form.plan);
 
 export const selectName = (state) => state.form.name;
 export const selectEmail = (state) => state.form.email;
