@@ -31,7 +31,9 @@ export function StepFirst() {
   };
 
 
-  const goToNextPage = () => {
+  const goToNextPage = (evt) => {
+    evt.preventDefault();
+
     if (isEmailInput) {
       const isValidateEmail = getValidateEmail();
       setValidateEmail(isValidateEmail);
@@ -52,12 +54,14 @@ export function StepFirst() {
     <>
       <h2 className="marine bold">Personal info</h2>
       <p>Please provide your name, email address, and phone number</p>
-      <form className="form-list">
+      <form className="form-list" onSubmit={goToNextPage}>
         <label>
           <p className="marine bold">Name</p>
           <input
             type="text"
             placeholder="Enter you name"
+            name="name"
+            required
             onChange={(evt) => dispatch(inputName(evt.target.value))}
             value={useSelector(selectName)}>
           </input>
@@ -70,10 +74,11 @@ export function StepFirst() {
           <input
             type="email"
             placeholder="Enter you email"
+            name="email"
             onChange={(evt) => dispatch(inputEmail(evt.target.value))}
             value={mail}>
           </input>
-          <span className={`red-alert fs-12 bold ${validateEmail ? 'hidden' : ''}`}>please enter an address like: myemail42@gmail.com</span>
+          <span className={`red-alert fs-10 bold ${validateEmail ? 'hidden' : ''}`}>please enter an address like: myemail42@gmail.com</span>
         </label>
         <label>
           <div className="check-required">
@@ -82,14 +87,15 @@ export function StepFirst() {
           <input
             type="text"
             placeholder="+1 234 567 890"
+            name="phone"
             onChange={handlePhone}
             value={phone}>
           </input>
         </label>
+        <div className="btn-container">
+          <button className="go-btn end-btn" type="submit">Next Step</button>
+        </div>
       </form>
-      <div className="btn-container">
-        <button className="go-btn end-btn" onClick={goToNextPage}>Next Step</button>
-      </div>
     </>
   )
 };

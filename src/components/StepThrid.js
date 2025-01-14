@@ -25,7 +25,7 @@ export function StepThrid() {
     <>
       <h2 className="marine bold">Pick add-ons</h2>
       <p>Add-ons help enhance your gaming experience</p>
-      <form className="form-check">
+      <div className="form-check">
         {pickOds.map(el => (
           <label key={el.id} className="main-card">
             <input
@@ -41,7 +41,7 @@ export function StepThrid() {
             <p className="check-cost">{checkPeriod ? `$${el.costYr}/yr` : `+$${el.costMo}/mo`}</p>
           </label>
         ))}
-      </form>
+      </div>
       <div className="btn-container">
         <button className="back-btn" onClick={goBack}>Go back</button>
         <button className="go-btn" onClick={goToNextPage}>Next Step</button>

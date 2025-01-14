@@ -29,7 +29,7 @@ export function StepSecond() {
     <>
       <h2 className="marine bold">Select your plan</h2>
       <p>You have the option of monthly or yearly billing</p>
-      <form className="form-radio">
+      <div className="form-radio">
         {tarifPlan.map(el => (
           <label key={el.id}>
             <input
@@ -50,7 +50,7 @@ export function StepSecond() {
             </div>
           </label>
         ))}
-      </form>
+      </div>
       <div className="time-container">
         <p>Monthly</p>
         <input

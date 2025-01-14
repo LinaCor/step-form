@@ -128,6 +128,10 @@ body {
   color: var(--marine-blue);
 }
 
+.fs-10 {
+  font-size: 10px;
+}
+
 .fs-12 {
   font-size: 12px;
 }
@@ -265,10 +269,15 @@ body {
 .form-list {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 
 .form-list>label {
   margin-bottom: 20px;
+}
+
+.form-list>label:first-child {
+  margin-bottom: 40px;
 }
 
 .form-list>label>p {
@@ -286,7 +295,6 @@ body {
 
 .form-radio {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 35px;
 }
 

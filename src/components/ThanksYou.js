@@ -13,7 +13,7 @@ export function ThanksYou() {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate('/');
-      //dispatch(resetStep);
+      dispatch(resetStep);
       dispatch(resetForm);
     }, 5000)
 
