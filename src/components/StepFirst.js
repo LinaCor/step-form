@@ -18,7 +18,7 @@ export function StepFirst() {
   const navigate = useNavigate();
 
   const getValidateEmail = () => {
-    const regExp = new RegExp(/^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i);
+    const regExp = new RegExp(/^[A-Z0-9._%+-]+@[A-Z0-9-]+\.[A-Z]{2,}$/i);
     return regExp.test(mail);
   };
 

@@ -1,4 +1,5 @@
 import { tarifPlan } from "../data";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { nextStep, prevStep } from "../store/step/step-actions";
@@ -24,6 +25,17 @@ export function StepSecond() {
     navigate(-1);
     dispatch(prevStep);
   };
+
+  useEffect(() => {
+    const handleKeyDown = (evt) => {
+      if (evt.key === 'Enter') {
+        goToNextPage();
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isPlanCheck]);
 
   return (
     <>

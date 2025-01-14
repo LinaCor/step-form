@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { prevStep } from "../store/step/step-actions";
 import { selectPlanRadio, selectAddonsCheck, selectPeriodChecked } from "../store/form/form-selector";
@@ -20,6 +21,17 @@ export function StepFour() {
     navigate(-1);
     dispatch(prevStep);
   };
+
+  useEffect(() => {
+    const handleKeyDown = (evt) => {
+      if (evt.key === 'Enter') {
+        goToNextPage();
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const totalAddonsPrice = (period) => {
     const addonPrice = currentAddons.reduce((total, item) => {
