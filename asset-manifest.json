@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/step-form/static/css/main.f21f1d5e.css",
-    "main.js": "/step-form/static/js/main.e8c04dfc.js",
+    "main.css": "/step-form/static/css/main.82d82fa7.css",
+    "main.js": "/step-form/static/js/main.bf47a0cf.js",
     "static/media/Ubuntu-Regular.ttf": "/step-form/static/media/Ubuntu-Regular.1cbb1b79a23478cc89ad.ttf",
     "static/media/Ubuntu-Bold.ttf": "/step-form/static/media/Ubuntu-Bold.fec2d0f1431a6114a6ce.ttf",
     "static/media/bg-sidebar-desktop.svg": "/step-form/static/media/bg-sidebar-desktop.6918153f38678372ceb1.svg",
@@ -11,11 +11,11 @@
     "static/media/icon-pro.svg": "/step-form/static/media/icon-pro.2e7e377da9c658d608624304a0f8dae6.svg",
     "index.html": "/step-form/index.html",
     "static/media/icon-arcade.svg": "/step-form/static/media/icon-arcade.a08c098289a31bb2f66d675be71565b3.svg",
-    "main.f21f1d5e.css.map": "/step-form/static/css/main.f21f1d5e.css.map",
-    "main.e8c04dfc.js.map": "/step-form/static/js/main.e8c04dfc.js.map"
+    "main.82d82fa7.css.map": "/step-form/static/css/main.82d82fa7.css.map",
+    "main.bf47a0cf.js.map": "/step-form/static/js/main.bf47a0cf.js.map"
   },
   "entrypoints": [
-    "static/css/main.f21f1d5e.css",
-    "static/js/main.e8c04dfc.js"
+    "static/css/main.82d82fa7.css",
+    "static/js/main.bf47a0cf.js"
   ]
 }
